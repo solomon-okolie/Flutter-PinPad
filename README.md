@@ -1,8 +1,8 @@
-# Pin Pad
+# PinPad
 
 A Flutter PinPad Widget.
 
-![Alt Text](https://media.giphy.com/media/ZcowgfJ01fUhNGNO60/giphy.gif)
+![Alt Text](https://media.giphy.com/media/MX3fippBY1kDcyPIsa/giphy.gif)
 
 ## Example Usage
 
