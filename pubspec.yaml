@@ -1,8 +1,8 @@
 name: pinpad
 description: A new flutter package project.
-version: 0.0.1
+version: 0.0.3
 author: "Okolie Solomon <okoliesolomon.o@gmail.com>"
-homepage:
+homepage: "https://github.com/solomon-okolie/Flutter-PinPad"
 
 dependencies:
   flutter:
