@@ -21,6 +21,8 @@ class PinPad extends StatefulWidget {
 
   final EdgeInsetsGeometry margin;
 
+  final Widget title;
+
   PinPad(
       {this.pinLength = 6,
       this.appBar,
@@ -29,7 +31,8 @@ class PinPad extends StatefulWidget {
       this.decoration,
       this.keyPadDecoration,
       this.buttonDecoration,
-      this.buttonTextStyle});
+      this.buttonTextStyle,
+      this.title});
 
   @override
   _PinPadState createState() => _PinPadState();
@@ -82,6 +85,7 @@ class _PinPadState extends State<PinPad> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            widget.title,
             PinDisplay(widget.pinLength, _input.length),
             Container(
               height: 10.0,
