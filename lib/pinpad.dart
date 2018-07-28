@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -121,5 +122,15 @@ class InputHelper {
     }
 
     return randomSet;
+  }
+}
+
+class PinPadHelper {
+  static Future<String> requestPin(BuildContext context,
+      {PinPad pinpad}) async {
+    var result = await Navigator.of(context).push(new MaterialPageRoute<String>(
+        builder: (ctx) => pinpad == null ? PinPad() : pinpad,
+        fullscreenDialog: true));
+    return result;
   }
 }
