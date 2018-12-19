@@ -1,3 +1,5 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.4] - 19-12-2018
 
-* TODO: Describe initial release.
+### Added
+  - Helper function to request pin.
+  

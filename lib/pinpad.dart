@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -7,8 +6,6 @@ import 'package:pinpad/pindisplay.dart';
 
 class PinPad extends StatefulWidget {
   final int pinLength;
-
-  final Widget appBar;
 
   final Decoration buttonDecoration;
 
@@ -26,14 +23,13 @@ class PinPad extends StatefulWidget {
 
   PinPad(
       {this.pinLength = 6,
-      this.appBar,
-      this.padding,
-      this.margin,
-      this.decoration,
-      this.keyPadDecoration,
-      this.buttonDecoration,
-      this.buttonTextStyle,
-      this.title});
+      this.padding = const EdgeInsets.all(5.0),
+      this.margin = const EdgeInsets.all(5.0),
+      this.decoration = const BoxDecoration(),
+      this.keyPadDecoration = const BoxDecoration(),
+      this.buttonDecoration = const BoxDecoration(),
+      this.buttonTextStyle = const TextStyle(),
+      @required this.title});
 
   @override
   _PinPadState createState() => _PinPadState();
@@ -78,28 +74,30 @@ class _PinPadState extends State<PinPad> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: widget.appBar,
-      body: Container(
-        padding: widget.padding,
-        margin: widget.margin,
-        decoration: widget.decoration,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            widget.title,
-            PinDisplay(widget.pinLength, _input.length),
-            Container(
-              height: 10.0,
-            ),
-            KeyPad(
-                _values,
-                this.addValue,
-                this.remove,
-                this.clear,
-                widget.keyPadDecoration,
-                widget.buttonDecoration,
-                widget.buttonTextStyle)
-          ],
+      body: SafeArea(
+        child: Container(
+          padding: widget.padding,
+          margin: widget.margin,
+          decoration: widget.decoration,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              widget.title,
+              Container(height: 40.0),
+              PinDisplay(widget.pinLength, _input.length),
+              Container(
+                height: 10.0,
+              ),
+              KeyPad(
+                  _values,
+                  this.addValue,
+                  this.remove,
+                  this.clear,
+                  widget.keyPadDecoration,
+                  widget.buttonDecoration,
+                  widget.buttonTextStyle)
+            ],
+          ),
         ),
       ),
     );
@@ -122,15 +120,5 @@ class InputHelper {
     }
 
     return randomSet;
-  }
-}
-
-class PinPadHelper {
-  static Future<String> requestPin(BuildContext context,
-      {PinPad pinpad}) async {
-    var result = await Navigator.of(context).push(new MaterialPageRoute<String>(
-        builder: (ctx) => pinpad == null ? PinPad() : pinpad,
-        fullscreenDialog: true));
-    return result;
   }
 }

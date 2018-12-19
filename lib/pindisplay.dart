@@ -11,8 +11,7 @@ class PinDisplay extends StatelessWidget {
 
   final EdgeInsetsGeometry margin;
 
-  PinDisplay(this.maxLength, this.inputLength,
-      [this.decoration, this.padding, this.margin]);
+  PinDisplay(this.maxLength, this.inputLength,[this.decoration, this.padding, this.margin]);
 
   @override
   Widget build(BuildContext context) {
