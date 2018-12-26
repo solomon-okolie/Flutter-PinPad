@@ -25,7 +25,7 @@ class PinDisplay extends StatelessWidget {
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
-          children: input.length<1? [Text(" ")]: Iterable.generate(
+          children: input.length<1? [Text(" ")] : Iterable.generate(
               maxLength,
               (n) => this.maskInput
                   ? Icon(

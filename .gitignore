@@ -1,0 +1,8 @@
+pubspec.lock
+ios/Runner/GeneratedPluginRegistrant.m
+ios/Runner/GeneratedPluginRegistrant.h
+ios/Flutter/Generated.xcconfig
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+android/local.properties
+.vscode/launch.json
+.packages

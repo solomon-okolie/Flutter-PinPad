@@ -25,7 +25,7 @@ class PinPad extends StatefulWidget {
 
   PinPad(
       {this.pinLength = 6,
-       this.maskInput=true,
+      this.maskInput = true,
       this.padding = const EdgeInsets.all(5.0),
       this.margin = const EdgeInsets.all(5.0),
       this.decoration = const BoxDecoration(),
@@ -36,6 +36,10 @@ class PinPad extends StatefulWidget {
 
   @override
   _PinPadState createState() => _PinPadState();
+
+  factory PinPad.useDefault() {
+    return PinPad(title: Text("Enter PIN"));
+  }
 }
 
 class _PinPadState extends State<PinPad> {
