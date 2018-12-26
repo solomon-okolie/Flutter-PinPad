@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PinDisplay extends StatelessWidget {
-  final int inputLength;
+  final String input;
 
   final int maxLength;
 
@@ -11,7 +11,10 @@ class PinDisplay extends StatelessWidget {
 
   final EdgeInsetsGeometry margin;
 
-  PinDisplay(this.maxLength, this.inputLength,[this.decoration, this.padding, this.margin]);
+  final bool maskInput;
+
+  PinDisplay(this.maxLength, this.input, this.maskInput,
+      [this.decoration, this.padding, this.margin]);
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +25,14 @@ class PinDisplay extends StatelessWidget {
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
-          children: Iterable
-              .generate(
-                  maxLength,
-                  (n) => Icon(
-                        n >= inputLength ? Icons.lock : Icons.lock_open,
-                        size: 20.0,
-                      ))
-              .toList()),
+          children: input.length<1? [Text(" ")]: Iterable.generate(
+              maxLength,
+              (n) => this.maskInput
+                  ? Icon(
+                      n >= input.length ? Icons.lock : Icons.lock_open,
+                      size: 20.0,
+                    )
+                  : Text(input[n-1])).toList()),
     );
   }
 }

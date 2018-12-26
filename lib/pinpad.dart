@@ -21,8 +21,11 @@ class PinPad extends StatefulWidget {
 
   final Widget title;
 
+  final bool maskInput;
+
   PinPad(
       {this.pinLength = 6,
+       this.maskInput=true,
       this.padding = const EdgeInsets.all(5.0),
       this.margin = const EdgeInsets.all(5.0),
       this.decoration = const BoxDecoration(),
@@ -84,7 +87,7 @@ class _PinPadState extends State<PinPad> {
             children: <Widget>[
               widget.title,
               Container(height: 40.0),
-              PinDisplay(widget.pinLength, _input.length),
+              PinDisplay(widget.pinLength, _input, widget.maskInput),
               Container(
                 height: 10.0,
               ),
