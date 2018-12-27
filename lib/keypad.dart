@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class KeyPad extends StatelessWidget {
+
+  /// decoration for the KeyPad.
   final Decoration decoration;
 
+  /// decoration for the buttons on the KeyPad.
   final Decoration buttonDecoration;
 
   final ValueChanged<String> addInput;
@@ -13,6 +16,7 @@ class KeyPad extends StatelessWidget {
 
   final List<int> numbers;
 
+  /// styles for the buttons on the KeyPad
   final TextStyle buttonTextStyle;
 
   KeyPad(this.numbers, this.addInput, this.removeInput, this.clear,

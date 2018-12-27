@@ -41,7 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
   String _pin = "";
 
   Future _getPin() async {
-    var pin= await PinPadHelper.requestPin(context, PinPad(title: Center(child: Text("Enter Pin"))));
+    // to style the pinpad:
+    // import 'package:pinpad/pinpad.dart' 
+    // create an instance of PinPad passing in the desired styles and decorations
+    // replace line 49 with the line below 
+    // var pin = await PinPadHelper.requestPin(context: context, pinpad:pinpad);
+    var pin = await PinPadHelper.requestPin(context: context);
     setState(() {
       _pin = pin;
     });

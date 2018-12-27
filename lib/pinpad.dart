@@ -5,22 +5,32 @@ import 'package:pinpad/keypad.dart';
 import 'package:pinpad/pindisplay.dart';
 
 class PinPad extends StatefulWidget {
+
+   /// required PIN length.
   final int pinLength;
 
+   /// decoration for the buttons on the KeyPad.
   final Decoration buttonDecoration;
 
+  /// styles for the buttons on the KeyPad
   final TextStyle buttonTextStyle;
 
+  /// decoration for the KeyPad.
   final Decoration keyPadDecoration;
 
+  /// decoration for the PinPad Widget
   final Decoration decoration;
 
+  /// PinPad padding.
   final EdgeInsetsGeometry padding;
 
+  /// PinPad margin
   final EdgeInsetsGeometry margin;
 
+  /// PinPad title. Defaults to Text("Enter PIN")
   final Widget title;
 
+  /// to mask PIN or not. default is true.
   final bool maskInput;
 
   PinPad(
