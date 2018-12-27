@@ -25,14 +25,14 @@ class PinDisplay extends StatelessWidget {
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
-          children: input.length<1? [Text(" ")] : Iterable.generate(
-              maxLength,
-              (n) => this.maskInput
-                  ? Icon(
-                      n >= input.length ? Icons.lock : Icons.lock_open,
-                      size: 20.0,
-                    )
-                  : Text(input[n-1])).toList()),
+          children: this.maskInput
+              ? Iterable.generate(
+                  maxLength,
+                  (n) => Icon(
+                        n >= input.length ? Icons.lock : Icons.lock_open,
+                        size: 20.0,
+                      )).toList()
+              : [Text(this.input,style: TextStyle(fontWeight: FontWeight.bold))]),
     );
   }
 }

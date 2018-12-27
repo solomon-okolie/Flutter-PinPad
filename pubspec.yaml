@@ -1,6 +1,6 @@
 name: pinpad
 description: A flutter PinPad Widget with default look and feel but be customized with decorations and styles. Randomised keypad arrangements, optional input masking. 100% dart code.
-version: 0.0.4
+version: 0.0.5
 author: "Okolie Solomon <okoliesolomon.o@gmail.com>"
 homepage: "https://github.com/solomon-okolie/Flutter-PinPad"
 

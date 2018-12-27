@@ -1,7 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:pinpad/pinpad.dart';
+
 import 'package:pinpad/pinpadhelper.dart';
 
 void main() => runApp(new MyApp());
@@ -33,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String _pin = "";
 
   Future _getPin() async {
-    var pin= await PinPadHelper.requestPin(context, PinPad(title: Center(child: Text("Enter Pin"))));
+    var pin = await PinPadHelper.requestPin(context: context);
     setState(() {
       _pin = pin;
     });
