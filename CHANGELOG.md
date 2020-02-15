@@ -1,4 +1,4 @@
-## [0.1.0] - 15-02-2020
+## [0.2.0] - 15-02-2020
 
 ### Added
   - Option in `PinPad` to control scrambling of input keys.
