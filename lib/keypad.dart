@@ -8,6 +8,9 @@ class KeyPad extends StatelessWidget {
   /// decoration for the buttons on the KeyPad.
   final Decoration buttonDecoration;
 
+  /// to scramble the position of input keys.
+  final bool scrambleKeys;
+
   final ValueChanged<String> addInput;
 
   final ValueChanged removeInput;
@@ -20,7 +23,7 @@ class KeyPad extends StatelessWidget {
   final TextStyle buttonTextStyle;
 
   KeyPad(this.numbers, this.addInput, this.removeInput, this.clear,
-      [this.decoration, this.buttonDecoration, this.buttonTextStyle]);
+      [this.scrambleKeys,this.decoration, this.buttonDecoration, this.buttonTextStyle]);
 
   @override
   Widget build(BuildContext context) {

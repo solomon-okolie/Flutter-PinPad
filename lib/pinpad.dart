@@ -33,9 +33,13 @@ class PinPad extends StatefulWidget {
   /// to mask PIN or not. default is true.
   final bool maskInput;
 
+  /// to scramble the position of input keys.
+  final bool scrambleKeys;
+
   PinPad(
       {this.pinLength = 6,
       this.maskInput = true,
+      this.scrambleKeys=true,
       this.padding = const EdgeInsets.all(5.0),
       this.margin = const EdgeInsets.all(5.0),
       this.decoration = const BoxDecoration(),
@@ -57,7 +61,12 @@ class _PinPadState extends State<PinPad> {
   String _input = "";
 
   _PinPadState() {
-    _values = InputHelper.getNumbers();
+
+  }
+
+  @override
+  initState(){
+    _values = InputHelper.getNumbers(widget.scrambleKeys);
   }
 
   void addValue(String value) {
@@ -110,6 +119,7 @@ class _PinPadState extends State<PinPad> {
                   this.addValue,
                   this.remove,
                   this.clear,
+                  widget.scrambleKeys,
                   widget.keyPadDecoration,
                   widget.buttonDecoration,
                   widget.buttonTextStyle)
@@ -122,8 +132,12 @@ class _PinPadState extends State<PinPad> {
 }
 
 class InputHelper {
-  static List<int> getNumbers() {
+  static List<int> getNumbers(bool scrambleNumbers) {
     var numberSet = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    if(!scrambleNumbers){
+      return numberSet;
+    }
 
     var randomSet = new List<int>();
 
