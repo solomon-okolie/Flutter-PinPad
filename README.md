@@ -2,7 +2,7 @@
 
 A Flutter PinPad Widget.
 
-![Alt Text](https://drive.google.com/file/d/1vZTKIKFfbMp_xxWuZ_XLAohE0oacYA82/view?usp=sharing)
+![Alt Text](https://github.com/solomon-okolie/Flutter-PinPad/blob/master/capture.gif)
 
 ## Example Usage
 
